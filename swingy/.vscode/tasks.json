@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "mvn -B clean install",
+            "group": "build"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "E: && cd /java/swingy && java -cp target\\swingy-1.0-SNAPSHOT.jar fr.mainox.java.App",
+            "group": "test"
+        },
+        {
+            "label": "compile & run",
+            "dependsOn": ["compile", "run"],
+            "dependsOrder": "sequence"
+        }
+    ]
+}
